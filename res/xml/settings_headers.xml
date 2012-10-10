@@ -91,6 +91,13 @@
         android:fragment="com.android.settings.cyanogenmod.SystemSettings"
         android:title="@string/system_settings_title" />
 
+    <!-- PizzaBean -->
+    <header
+        android:id="@+id/pizzabean_settings"
+        android:icon="@drawable/pizzabean_settings"
+        android:fragment="com.android.settings.PizzabeanSettings"
+        android:title="@string/pizzabean_settings" />
+
     <!-- DEVICE -->
     <header android:title="@string/header_category_device" />
 

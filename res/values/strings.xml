@@ -4888,4 +4888,9 @@
     <string name="volume_key_cursor_control_on_reverse">Volume up/down moves cursor right/left</string>
 
     <!-- **** CYANOGENMOD ADDITIONS END **** -->
+
+    <!-- **** PIZZABEAN EDITS START **** -->
+    <string name="pizzabean_settings">PizzaBean</string>
+    <string name="pizzabean_general">General</string>
+    <!-- **** PIZZABEAN EDITS END **** -->
 </resources>
