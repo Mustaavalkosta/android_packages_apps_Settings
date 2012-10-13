@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-        android:title="@string/pizzabean_settings"
+        android:title="@string/pb_settings_title"
         android:key="pref_category_button_settings"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
-
-    <PreferenceCategory
-        android:title="@string/pizzabean_general" />
-
-    <CheckBoxPreference
-        android:key="statusbar_sixbar"
-        android:title="@string/pref_statusbar_sixbar_signal_title"
-        android:summary="@string/pref_statusbar_sixbar_signal_summary" />
+    
+    <!-- Statusbar tweaks - launches fragment -->
+    <PreferenceScreen
+        android:key="pizzabean_statusbar"
+        android:fragment="com.android.settings.pizzabean.Statusbar"
+        android:title="@string/pb_statusbar_title" />
 
 </PreferenceScreen>

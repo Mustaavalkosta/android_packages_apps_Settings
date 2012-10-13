@@ -96,7 +96,7 @@
         android:id="@+id/pizzabean_settings"
         android:icon="@drawable/pizzabean_settings"
         android:fragment="com.android.settings.PizzabeanSettings"
-        android:title="@string/pizzabean_settings" />
+        android:title="@string/pb_settings_title" />
 
     <!-- DEVICE -->
     <header android:title="@string/header_category_device" />
