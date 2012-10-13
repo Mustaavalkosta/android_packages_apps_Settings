@@ -7,4 +7,9 @@
     <PreferenceCategory
         android:title="@string/pizzabean_general" />
 
+    <CheckBoxPreference
+        android:key="statusbar_sixbar"
+        android:title="@string/pref_statusbar_sixbar_signal_title"
+        android:summary="@string/pref_statusbar_sixbar_signal_summary" />
+
 </PreferenceScreen>
