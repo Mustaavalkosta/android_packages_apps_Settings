@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/pb_settings_title"
         android:key="pref_category_button_settings"
@@ -9,5 +9,11 @@
         android:key="pizzabean_statusbar"
         android:fragment="com.android.settings.pizzabean.Statusbar"
         android:title="@string/pb_statusbar_title" />
+    
+    <!-- Behavior tweaks - launches fragment -->
+    <PreferenceScreen
+        android:key="pizzabean_behavior"
+        android:fragment="com.android.settings.pizzabean.Behavior"
+        android:title="@string/pb_behavior_title" />
 
 </PreferenceScreen>

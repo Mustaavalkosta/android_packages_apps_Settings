@@ -4892,6 +4892,7 @@
     <!-- **** PIZZABEAN EDITS START **** -->
     <string name="pb_settings_title">PizzaBean</string>
     <string name="pb_statusbar_title">Statusbar tweaks</string>
+    <string name="pb_behavior_title">Behavior tweaks</string>
     
     <!-- **** Six bar signal **** -->
     <string name="pb_sixbar_title">Six bar signal icon</string>
