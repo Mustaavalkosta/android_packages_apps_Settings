@@ -1532,6 +1532,8 @@
         </activity>
         <activity
             android:name=".pizzabean.ShareToClipboard"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:icon="@drawable/ic_menu_clipboard"
             android:label="@string/pb_sharetoclipboard_title" >
             <intent-filter>
                 <action android:name="android.intent.action.SEND"/>
