@@ -1530,6 +1530,16 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".pizzabean.ShareToClipboard"
+            android:label="@string/pb_sharetoclipboard_title" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.ALTERNATIVE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/*" />
+            </intent-filter>
+        </activity>
         <!-- PizzaBean activities End -->
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
