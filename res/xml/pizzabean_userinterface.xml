@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    	android:title="@string/pb_settings_title"
+        android:key="pref_category_button_settings"
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <CheckBoxPreference
+		android:key="force_tabletui"
+		android:title="@string/pb_tablet_ui"
+		android:summary="@string/pb_tablet_ui_summary" />
+
+</PreferenceScreen>
