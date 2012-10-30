@@ -21,7 +21,7 @@ public class TabletUI extends SettingsPreferenceFragment {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// Load the preferences from an XML resource
-		addPreferencesFromResource(R.xml.pizzabean_tablet_ui);
+		addPreferencesFromResource(R.xml.pizzabean_tabletui);
 		
 		PreferenceScreen prefSet = getPreferenceScreen();
 		mCr = getContentResolver();
