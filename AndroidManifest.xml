@@ -1538,6 +1538,13 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".pizzabean.DensityChanger"
+            android:label="@string/lcd_density_wizard" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".pizzabean.ShareToClipboard"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:icon="@drawable/ic_menu_clipboard"

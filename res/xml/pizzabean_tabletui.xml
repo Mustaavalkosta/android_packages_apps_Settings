@@ -6,7 +6,12 @@
 
     <CheckBoxPreference
 		android:key="force_tabletui"
-		android:title="@string/pb_tablet_ui"
-		android:summary="@string/pb_tablet_ui_summary" />
+		android:title="@string/pb_force_tablet_ui_title"
+		android:summary="@string/pb_force_tablet_ui_summary" />
+    
+    <Preference
+        android:key="lcd_density_setup"
+        android:title="@string/lcd_density_title"
+        android:summary="@string/lcd_density_summary" />
 
 </PreferenceScreen>
