@@ -4903,8 +4903,8 @@
 
     <!-- **** PIZZABEAN EDITS START **** -->
     <string name="pb_settings_title">PizzaBean</string>
-    <string name="pb_statusbar_title">Statusbar tweaks</string>
-    <string name="pb_ui_title">User Interface tweaks</string>
+    <string name="pb_statusbar_title">Statusbar</string>
+    <string name="pb_tablet_ui_title">Tablet UI</string>
     
     <!-- **** Share to clipboard **** -->
     <string name="pb_sharetoclipboard_title">Copy to clipboard</string>

@@ -1531,6 +1531,13 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".pizzabean.TabletUI"
+            android:label="@string/pb_tablet_ui_title" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".pizzabean.ShareToClipboard"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:icon="@drawable/ic_menu_clipboard"

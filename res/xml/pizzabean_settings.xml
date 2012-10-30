@@ -10,10 +10,10 @@
         android:fragment="com.android.settings.pizzabean.Statusbar"
         android:title="@string/pb_statusbar_title" />
     
-    <!-- UI tweaks - launches fragment -->
+    <!-- TabletUI tweaks - launches fragment -->
     <PreferenceScreen
-        android:key="pizzabean_userinterface"
-        android:fragment="com.android.settings.pizzabean.UserInterface"
-        android:title="@string/pb_ui_title" />
+        android:key="pizzabean_tablet_ui"
+        android:fragment="com.android.settings.pizzabean.TabletUI"
+        android:title="@string/pb_tablet_ui_title" />
 
 </PreferenceScreen>

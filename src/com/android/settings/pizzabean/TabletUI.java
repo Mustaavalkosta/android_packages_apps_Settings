@@ -9,9 +9,9 @@ import android.provider.Settings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class UserInterface extends SettingsPreferenceFragment {
+public class TabletUI extends SettingsPreferenceFragment {
 	
-	private final static String TAG = "PizzaBean UserInterface";
+	private final static String TAG = "PizzaBean TabletUI";
 	private static final String PREF_FORCE_TABLET_UI = "force_tabletui";
     
 	private CheckBoxPreference mTabletui;
@@ -21,7 +21,7 @@ public class UserInterface extends SettingsPreferenceFragment {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// Load the preferences from an XML resource
-		addPreferencesFromResource(R.xml.pizzabean_userinterface);
+		addPreferencesFromResource(R.xml.pizzabean_tablet_ui);
 		
 		PreferenceScreen prefSet = getPreferenceScreen();
 		mCr = getContentResolver();
