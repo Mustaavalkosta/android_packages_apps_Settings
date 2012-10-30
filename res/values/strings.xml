@@ -4912,8 +4912,13 @@
     
     <!-- **** Six bar signal **** -->
     <string name="pb_sixbar_title">Six bar signal icon</string>
-    <string name="pb_sixbar_summary">Use six bar cell signal icon</string>
+    <string name="pb_sixbar_summary">Use six bar wifi and telephony signal icons</string>
     
+    <!-- **** Dual Pane **** -->
+    <string name="pb_dual_pane_title">Dual-pane view</string>
+    <string name="pb_dual_pane_summary">Apps supporting this setting will be displayed in two panes side by side</string>
+	 
+
     <!-- **** TabletUI **** -->
     <string name="pb_force_tablet_ui_title">Force Tablet UI</string>
     <string name="pb_force_tablet_ui_summary">This will switch to Tablet UI (requires reboot)</string>

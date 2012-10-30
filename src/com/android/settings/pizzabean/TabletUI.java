@@ -14,8 +14,10 @@ import com.android.settings.SettingsPreferenceFragment;
 public class TabletUI extends SettingsPreferenceFragment {
 	
 	private final static String TAG = "PizzaBean TabletUI";
-	private static final String PREF_FORCE_TABLET_UI = "force_tabletui";
+	private static final String KEY_FORCE_TABLET_UI = "force_tabletui";
+	private static final String KEY_DUAL_PANE = "dual_pane";
     
+	private CheckBoxPreference mDualPane;
 	private CheckBoxPreference mTabletui;
 	private Preference mLcdDensity;
 	private int newDensityValue;
@@ -27,11 +29,16 @@ public class TabletUI extends SettingsPreferenceFragment {
 		// Load the preferences from an XML resource
 		addPreferencesFromResource(R.xml.pizzabean_tabletui);
 		
-		PreferenceScreen prefSet = getPreferenceScreen();
+		PreferenceScreen mPrefSet = getPreferenceScreen();
 		mCr = getContentResolver();
 		
+		/* Dual Pane */
+		mDualPane = (CheckBoxPreference) mPrefSet.findPreference(KEY_DUAL_PANE);
+		mTabletui.setChecked(Settings.System.getInt(mCr,
+				Settings.System.DUAL_PANE_SETTINGS, 0) == 1);
+		
 		/* Force Tablet UI */
-		mTabletui = (CheckBoxPreference) prefSet.findPreference(PREF_FORCE_TABLET_UI);
+		mTabletui = (CheckBoxPreference) mPrefSet.findPreference(KEY_FORCE_TABLET_UI);
 		mTabletui.setChecked(Settings.System.getInt(mCr,
 				Settings.System.FORCE_TABLET_UI, 0) == 1);
 		
@@ -50,7 +57,11 @@ public class TabletUI extends SettingsPreferenceFragment {
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, 
     		Preference preference) {
     	
-    	if (preference == mTabletui) {
+    	if (preference == mDualPane) {
+    		Settings.System.putInt(mCr, Settings.System.DUAL_PANE_SETTINGS,
+    				((CheckBoxPreference) preference).isChecked() ? 1 : 0);
+    		return true;    		
+    	} else if (preference == mTabletui) {
     		Settings.System.putInt(mCr, Settings.System.FORCE_TABLET_UI,
     				((CheckBoxPreference) preference).isChecked() ? 1 : 0);
     		return true;
