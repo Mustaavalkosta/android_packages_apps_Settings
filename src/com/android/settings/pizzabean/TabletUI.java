@@ -34,7 +34,7 @@ public class TabletUI extends SettingsPreferenceFragment {
 		
 		/* Dual Pane */
 		mDualPane = (CheckBoxPreference) mPrefSet.findPreference(KEY_DUAL_PANE);
-		mTabletui.setChecked(Settings.System.getInt(mCr,
+		mDualPane.setChecked(Settings.System.getInt(mCr,
 				Settings.System.DUAL_PANE_SETTINGS, 0) == 1);
 		
 		/* Force Tablet UI */
