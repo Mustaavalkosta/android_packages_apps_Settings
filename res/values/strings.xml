@@ -4953,7 +4953,7 @@
     <string name="pb_clipboard_notification">Copied to clipboard</string>
     
     <!-- **** Six bar signal **** -->
-    <string name="pb_sixbar_title">Six bar signal icon</string>
+    <string name="pb_sixbar_title">Six bar signal icons</string>
     <string name="pb_sixbar_summary">Use six bar wifi and telephony signal icons</string>
     
     <!-- **** Dual Pane **** -->
