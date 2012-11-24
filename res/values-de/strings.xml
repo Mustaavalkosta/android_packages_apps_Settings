@@ -508,9 +508,9 @@
     <string name="wifi_fail_to_scan" msgid="1265540342578081461">"Netzwerkscan nicht möglich"</string>
     <string name="wifi_notify_open_networks" msgid="3755768188029653293">"Netzwerkhinweis"</string>
     <string name="wifi_notify_open_networks_summary" msgid="3038290727701553612">"Benachrichtigen, wenn ein offenes Netzwerk verfügbar ist"</string>
-    <string name="wifi_poor_network_detection" msgid="4925789238170207169">"Schlechte Internetverbindungen vermeiden"</string>
+    <string name="wifi_poor_network_detection" msgid="4925789238170207169">"Schlechte Verbindungen"</string>
     <string name="wifi_poor_network_detection_summary" msgid="2466956369738047669">"WLAN nur bei guter Internetverbindung verwenden"</string>
-    <string name="wifi_setting_sleep_policy_title" msgid="9107237003911220057">"WLAN im Standby-Modus aktiviert lassen"</string>
+    <string name="wifi_setting_sleep_policy_title" msgid="9107237003911220057">"Im Standby-Modus aktiv lassen"</string>
     <string name="wifi_setting_sleep_policy_error" msgid="8174902072673071961">"Beim Ändern der Einstellung ist ein Problem aufgetreten."</string>
     <string name="wifi_add_network" msgid="6234851776910938957">"Netzwerk hinzufügen"</string>
     <string name="wifi_access_points" msgid="2664629396767022441">"WLAN-Netzwerke"</string>
@@ -578,7 +578,7 @@
     <string name="wifi_setting_frequency_band_title" msgid="7493768705046080060">"WLAN-Frequenzband"</string>
     <string name="wifi_setting_frequency_band_summary" msgid="3250740757118009784">"Frequenzbereich für Betrieb festlegen"</string>
     <string name="wifi_setting_frequency_band_error" msgid="837281974489794378">"Fehler beim Festlegen des Frequenzbands"</string>
-    <string name="wifi_setting_countrycode_title">WLAN-Ländercode</string>
+    <string name="wifi_setting_countrycode_title">Ländercode</string>
     <string name="wifi_setting_countrycode_summary">Den WLAN-Ländercode festlegen</string>
     <string name="wifi_setting_countrycode_error">Beim Festlegen des WLAN-Ländercodes ist ein Problem aufgetreten</string>
     <string name="wifi_advanced_mac_address_title" msgid="6571335466330978393">"MAC-Adresse"</string>
@@ -1726,6 +1726,14 @@
 
     <!-- CYANOGENMOD EDITS START -->
 
+    <!-- Wifi sleep timeout -->
+    <string name="wifi_idle_mn_title">Standby nach Leerlauf</string>
+    <string name="wifi_idle_5mn">5 Minuten</string>
+    <string name="wifi_idle_15mn">15 Minuten (Standard)</string>
+    <string name="wifi_idle_30mn">30 Minuten</string>
+    <string name="wifi_idle_1h">1 Stunde</string>
+    <string name="wifi_idle_3h">3 Stunden</string>
+
     <!-- Quiet hours -->
     <string name="quiet_hours_title">Ruhige Stunden</string>
     <string name="quiet_hours_summary">Benachrichtigungen in einem vorgegebenen Zeitraum modifizieren</string>
@@ -2504,6 +2512,34 @@ ice shows the slider widgets before the unlock option [CHAR LIMIT=28]-->
     <string name="sms_security_check_limit_title">SMS-Begrenzung</string>
     <string name="sms_security_check_limit_summary">Momentane Begrenzung: %d Nachrichten in 15 Minuten.\nZeigt einen Alarmdialog an, um Apps daran zu hindern, häufig SMS zu verschicken.</string>
     <string name="sms_security_check_limit_default">30 (Standard)</string>
+
+    <!-- Stylus Gestures -->
+    <string name="gestures_settings_title">Stiftgesten</string>
+    <string name="category_spen_title">Stiftgesten</string>
+    <string name="enable_subcat_title">Stift</string>
+    <string name="enable_spen_title_head">Stiftgesten einschalten</string>
+    <string name="enable_spen_summary_head">Ermöglicht Aktionen mit einem Stift auszulösen. Warnung: Apps werden keine Eingaben entgegen nehmen, die mit gedrückter Stift-Taste eingegeben werden.</string>
+    <string name="gestures_subcat_title">Gesten</string>
+    <string name="gestures_left_spen_title_head">Nach links wischen</string>
+    <string name="gestures_left_spen_summary_head">Aktion für eine Wischgeste nach links festlegen</string>
+    <string name="gestures_right_spen_title_head">Nach rechts wischen</string>
+    <string name="gestures_right_spen_summary_head">Aktion für eine Wischgeste nach rechts festlegen</string>
+    <string name="gestures_up_spen_title_head">Nach oben wischen</string>
+    <string name="gestures_up_spen_summary_head">Aktion für eine Wischgeste nach oben festlegen</string>
+    <string name="gestures_down_spen_title_head">Nach unten wischen</string>
+    <string name="gestures_down_spen_summary_head">Aktion für eine Wischgeste nach unten festlegen</string>
+    <string name="gestures_long_spen_title_head">Gedrückthalten</string>
+    <string name="gestures_long_spen_summary_head">Aktion für Gedrückthalten des Stiftes festlegen</string>
+    <string name="gestures_double_spen_title_head">Doppelberührung</string>
+    <string name="gestures_double_spen_summary_head">Aktion für Doppelberührung festlegen</string>
+
+    <!-- Gestures Options -->
+    <string name="gestures_action_empty">Keine Aktion</string>
+    <string name="gestures_action_home">Zum Standardbildschirm</string>
+    <string name="gestures_action_back">Zurück-Taste emulieren</string>
+    <string name="gestures_action_menu">Menü-Taste emulieren</string>
+    <string name="gestures_action_search">Suche aufrufen</string>
+    <string name="gestures_action_recent">Letzte Apps</string>
 
     <!-- **** CYANOGENMOD ADDITIONS END **** -->
 </resources>
