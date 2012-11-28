@@ -4964,6 +4964,10 @@
     <!-- **** Six bar signal **** -->
     <string name="pb_sixbar_title">Six bar signal icons</string>
     <string name="pb_sixbar_summary">Use six bar wifi and telephony signal icons</string>
+
+    <!-- **** Recent Apps Memory Display **** -->
+    <string name="pb_recents_mem_display_title">Memory display</string>
+    <string name="pb_recents_mem_display_summary">Enable display of available memory</string>
     
     <!-- **** Dual Pane **** -->
     <string name="pb_dual_pane_title">Dual-pane view</string>

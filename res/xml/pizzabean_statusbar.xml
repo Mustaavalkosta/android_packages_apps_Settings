@@ -9,4 +9,9 @@
         android:title="@string/pb_sixbar_title"
         android:summary="@string/pb_sixbar_summary" />
 
+    <CheckBoxPreference
+        android:key="recents_mem_display"
+        android:title="@string/pb_recents_mem_display_title"
+        android:summary="@string/pb_recents_mem_display_summary" />
+
 </PreferenceScreen>
