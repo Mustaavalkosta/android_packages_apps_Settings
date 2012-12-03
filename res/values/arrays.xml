@@ -1539,5 +1539,34 @@
         <item>240</item>
         <item>320</item>
     </string-array>
+
+    <!-- Display settings.  The delay in inactivity before the keylight is turned off. These are shown in a list dialog. -->
+    <string-array name="keylight_timeout_entries">
+        <item>6 seconds (default)</item>
+        <item>10 seconds</item>
+        <item>15 seconds</item>
+        <item>20 seconds</item>
+        <item>30 seconds</item>
+        <item>1 minute</item>
+        <item>2 minutes</item>
+    </string-array>
+
+    <!-- Do not translate. -->
+    <string-array name="keylight_timeout_values" translatable="false">
+        <!-- Do not translate. -->
+        <item>6000</item>
+        <!-- Do not translate. -->
+        <item>10000</item>
+        <!-- Do not translate. -->
+        <item>15000</item>
+        <!-- Do not translate. -->
+        <item>20000</item>
+        <!-- Do not translate. -->
+        <item>30000</item>
+        <!-- Do not translate. -->
+        <item>60000</item>
+        <!-- Do not translate. -->
+        <item>120000</item>
+    </string-array>
     <!-- **** PIZZABEAN EDITS END **** -->
 </resources>

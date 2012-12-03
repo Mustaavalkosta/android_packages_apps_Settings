@@ -4954,31 +4954,37 @@
 
     <!-- **** PIZZABEAN EDITS START **** -->
     <string name="pb_settings_title">PizzaBean</string>
+    <string name="pb_hardware_keys_title">Hardware Keys</string>
     <string name="pb_statusbar_title">Statusbar</string>
     <string name="pb_tablet_ui_title">Tablet UI</string>
     
     <!-- **** Share to clipboard **** -->
     <string name="pb_sharetoclipboard_title">Copy to clipboard</string>
     <string name="pb_clipboard_notification">Copied to clipboard</string>
+
+    <!-- Hardware keys tweaks begin -->
+        <!-- **** Keylight timeout **** -->
+    <string name="pb_keylight_timeout_title">Keylight timeout</string>
+    <string name="pb_keylight_timeout_summary">After <xliff:g id="keylight_timeout_description">%1$s</xliff:g> of inactivity</string>
+    <!-- Hardware keys tweaks end -->
     
-    <!-- **** Six bar signal **** -->
+    <!-- Statusbar tweaks begin -->
+        <!-- **** Six bar signal **** -->
     <string name="pb_sixbar_title">Six bar signal icons</string>
     <string name="pb_sixbar_summary">Use six bar wifi and telephony signal icons</string>
-
-    <!-- **** Recent Apps Memory Display **** -->
+        <!-- **** Recent Apps Memory Display **** -->
     <string name="pb_recents_mem_display_title">Memory display</string>
     <string name="pb_recents_mem_display_summary">Enable display of available memory</string>
+    <!-- Statusbar tweaks end -->
     
-    <!-- **** Dual Pane **** -->
+    <!-- Tablet UI tweaks begin -->
+        <!-- **** Dual Pane **** -->
     <string name="pb_dual_pane_title">Dual-pane view</string>
     <string name="pb_dual_pane_summary">Apps supporting this setting will be displayed in two panes side by side</string>
-	 
-
-    <!-- **** TabletUI **** -->
+        <!-- **** TabletUI **** -->
     <string name="pb_force_tablet_ui_title">Force Tablet UI</string>
     <string name="pb_force_tablet_ui_summary">This will switch to Tablet UI (requires reboot)</string>
-    
-    <!-- LCD Density -->
+        <!-- **** LCD Density **** -->
     <string name="lcd_density_title">LCD Density</string>
     <string name="lcd_density_summary">unknown</string>
     <string name="current_lcd_density">"Current LCD Density: "</string>
@@ -5007,6 +5013,7 @@
     <string name="custom_density_dialog_button_got">Got it!</string>
     <string name="custom_density_dialog_button_reboot">Reboot now</string>
     <string name="pb_dpi">DPI</string>
+    <!-- Tablet UI tweaks end -->
         
     <!-- **** PIZZABEAN EDITS END **** -->
 </resources>

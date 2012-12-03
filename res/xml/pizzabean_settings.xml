@@ -4,6 +4,12 @@
         android:key="pref_category_button_settings"
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
     
+    <!-- Display tweaks - launches fragment -->
+    <PreferenceScreen
+        android:key="pizzabean_hardware_keys"
+        android:fragment="com.android.settings.pizzabean.HardwareKeys"
+        android:title="@string/pb_hardware_keys_title" />
+    
     <!-- Statusbar tweaks - launches fragment -->
     <PreferenceScreen
         android:key="pizzabean_statusbar"
