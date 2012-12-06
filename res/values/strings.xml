@@ -4954,8 +4954,9 @@
 
     <!-- **** PIZZABEAN EDITS START **** -->
     <string name="pb_settings_title">PizzaBean</string>
-    <string name="pb_hardware_keys_title">Hardware Keys</string>
-    <string name="pb_statusbar_title">Statusbar</string>
+    <string name="pb_hardware_keys_title">Hardware keys</string>
+    <string name="pb_recent_apps_title">Recent apps</string>
+    <string name="pb_statusbar_title">Status bar</string>
     <string name="pb_tablet_ui_title">Tablet UI</string>
     
     <!-- **** Share to clipboard **** -->

@@ -10,10 +10,16 @@
         android:fragment="com.android.settings.pizzabean.HardwareKeys"
         android:title="@string/pb_hardware_keys_title" />
     
-    <!-- Statusbar tweaks - launches fragment -->
+    <!-- Recent apps tweaks - launches fragment -->
+    <PreferenceScreen
+        android:key="pizzabean_recent_apps"
+        android:fragment="com.android.settings.pizzabean.RecentApps"
+        android:title="@string/pb_recent_apps_title" />
+    
+    <!-- Status bar tweaks - launches fragment -->
     <PreferenceScreen
         android:key="pizzabean_statusbar"
-        android:fragment="com.android.settings.pizzabean.Statusbar"
+        android:fragment="com.android.settings.pizzabean.StatusBar"
         android:title="@string/pb_statusbar_title" />
     
     <!-- TabletUI tweaks - launches fragment -->

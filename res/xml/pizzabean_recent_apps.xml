@@ -5,8 +5,8 @@
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <CheckBoxPreference
-        android:key="sixbar_enabled"
-        android:title="@string/pb_sixbar_title"
-        android:summary="@string/pb_sixbar_summary" />
+        android:key="recents_mem_display"
+        android:title="@string/pb_recents_mem_display_title"
+        android:summary="@string/pb_recents_mem_display_summary" />
 
 </PreferenceScreen>
