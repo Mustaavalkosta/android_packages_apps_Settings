@@ -16,15 +16,17 @@ import static android.provider.Settings.System.SCREEN_OFF_TIMEOUT;
 
 public class HardwareKeys extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
-	
-    private final static String TAG = "PizzaBean HardwareKeys";
-	
+
+    private static final String TAG = "PizzaBean HardwareKeys";
+
     /** If there is no setting in the provider, use this. */
     private static final int FALLBACK_KEYLIGHT_TIMEOUT_VALUE = 6000;
-    
-    private static final String KEY_KEYLIGHT_TIMEOUT = "keylight_timeout";
+
+    private static final String PREF_KEYLIGHT_TIMEOUT = "keylight_timeout";
 
     private ListPreference mKeylightTimeoutPreference;
+
+    private PreferenceScreen mPrefSet;
     private ContentResolver mCr;
 
 	@Override
@@ -32,11 +34,12 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
 		super.onCreate(savedInstanceState);
 		// Load the preferences from an XML resource
 		addPreferencesFromResource(R.xml.pizzabean_hardware_keys);
-		
-		PreferenceScreen prefSet = getPreferenceScreen();
+
+		mPrefSet = getPreferenceScreen();
 		mCr = getContentResolver();
-	
-        mKeylightTimeoutPreference = (ListPreference) findPreference(KEY_KEYLIGHT_TIMEOUT);
+
+        /** Button backlight timeout */
+        mKeylightTimeoutPreference = (ListPreference) findPreference(PREF_KEYLIGHT_TIMEOUT);
         final long currentTimeout = Settings.System.getLong(mCr, KEYLIGHT_TIMEOUT,
                 FALLBACK_KEYLIGHT_TIMEOUT_VALUE);
         mKeylightTimeoutPreference.setValue(String.valueOf(currentTimeout));
@@ -107,9 +110,8 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
             } catch (NumberFormatException e) {
                 Log.e(TAG, "could not persist keylight timeout setting", e);
             }
+            return true;
         }
-
-        return true;
+        return false;
     }
-
 }

@@ -4965,7 +4965,7 @@
 
     <!-- Hardware keys tweaks begin -->
         <!-- **** Keylight timeout **** -->
-    <string name="pb_keylight_timeout_title">Keylight timeout</string>
+    <string name="pb_keylight_timeout_title">Backlight timeout</string>
     <string name="pb_keylight_timeout_summary">After <xliff:g id="keylight_timeout_description">%1$s</xliff:g> of inactivity</string>
     <!-- Hardware keys tweaks end -->
     

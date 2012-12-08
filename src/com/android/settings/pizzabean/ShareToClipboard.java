@@ -9,7 +9,7 @@ import android.widget.Toast;
 import com.android.settings.R;
 
 public class ShareToClipboard extends Activity {
-    
+
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
