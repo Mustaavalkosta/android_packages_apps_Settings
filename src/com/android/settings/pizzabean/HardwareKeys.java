@@ -102,7 +102,7 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         final String key = preference.getKey();
-        if (KEY_KEYLIGHT_TIMEOUT.equals(key)) {
+        if (PREF_KEYLIGHT_TIMEOUT.equals(key)) {
             int value = Integer.parseInt((String) objValue);
             try {
                 Settings.System.putInt(getContentResolver(), KEYLIGHT_TIMEOUT, value);
