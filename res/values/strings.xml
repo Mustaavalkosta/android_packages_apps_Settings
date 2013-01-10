@@ -5116,4 +5116,12 @@
     <string name="lockscreen_maximize_widgets_summary">Show widgets maximized and the unlock minimized when the screen is turned on</string>
 
     <!-- **** CYANOGENMOD ADDITIONS END **** -->
+
+    <!-- **** PIZZABEAN ADDITIONS START **** -->
+
+    <!-- Hardware keys backlight timeout -->
+    <string name="button_backlight_timeout_title">Button backlight</string>
+    <string name="button_backlight_timeout_summary">Timeout after <xliff:g id="keylight_timeout_description">%1$s</xliff:g> of inactivity</string>
+
+    <!-- **** PIZZABEAN ADDITIONS END **** -->
 </resources>
