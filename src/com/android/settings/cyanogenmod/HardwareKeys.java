@@ -29,14 +29,8 @@ import android.widget.Toast;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-import java.util.ArrayList;
-
 public class HardwareKeys extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
-    private static final int FALLBACK_BUTTON_BACKLIGHT_TIMEOUT_VALUE = 5 * 1000; // 5 seconds
-
-    private static final String HARDWARE_KEYS_BACKLIGHT_TIMEOUT = "button_backlight_timeout";
-    private static final String HARDWARE_KEYS_CATEGORY_ADDITIONAL_OPTIONS = "additional_options";
     private static final String HARDWARE_KEYS_CATEGORY_BINDINGS = "hardware_keys_bindings";
     private static final String HARDWARE_KEYS_ENABLE_CUSTOM = "hardware_keys_enable_custom";
     private static final String HARDWARE_KEYS_HOME_LONG_PRESS = "hardware_keys_home_long_press";
@@ -74,7 +68,6 @@ public class HardwareKeys extends SettingsPreferenceFragment implements OnPrefer
     private ListPreference mAssistLongPressAction;
     private ListPreference mAppSwitchPressAction;
     private ListPreference mAppSwitchLongPressAction;
-    private ListPreference mButtonBacklightTimeout;
     private CheckBoxPreference mShowActionOverflow;
 
     @Override
@@ -83,7 +76,6 @@ public class HardwareKeys extends SettingsPreferenceFragment implements OnPrefer
 
         final int deviceKeys = getResources().getInteger(
                 com.android.internal.R.integer.config_deviceHardwareKeys);
-        final boolean hasDeviceKeys = deviceKeys != 0;
         final boolean hasHomeKey = (deviceKeys & KEY_MASK_HOME) != 0;
         final boolean hasMenuKey = (deviceKeys & KEY_MASK_MENU) != 0;
         final boolean hasAssistKey = (deviceKeys & KEY_MASK_ASSIST) != 0;
@@ -108,14 +100,10 @@ public class HardwareKeys extends SettingsPreferenceFragment implements OnPrefer
                 HARDWARE_KEYS_APP_SWITCH_PRESS);
         mAppSwitchLongPressAction = (ListPreference) prefSet.findPreference(
                 HARDWARE_KEYS_APP_SWITCH_LONG_PRESS);
-        mButtonBacklightTimeout = (ListPreference) prefSet.findPreference(
-                HARDWARE_KEYS_BACKLIGHT_TIMEOUT);
         mShowActionOverflow = (CheckBoxPreference) prefSet.findPreference(
                 HARDWARE_KEYS_SHOW_OVERFLOW);
         PreferenceCategory bindingsCategory = (PreferenceCategory) prefSet.findPreference(
                 HARDWARE_KEYS_CATEGORY_BINDINGS);
-        PreferenceCategory additionalOptionsCategory = (PreferenceCategory) prefSet.findPreference(
-                HARDWARE_KEYS_CATEGORY_ADDITIONAL_OPTIONS);
 
         if (hasHomeKey) {
             int homeLongPressAction;
@@ -190,76 +178,12 @@ public class HardwareKeys extends SettingsPreferenceFragment implements OnPrefer
             bindingsCategory.removePreference(mAppSwitchLongPressAction);
         }
 
-        if (hasDeviceKeys) {
-            final long currentTimeout = Settings.System.getLong(getContentResolver(),
-                    Settings.System.BUTTON_BACKLIGHT_TIMEOUT, FALLBACK_BUTTON_BACKLIGHT_TIMEOUT_VALUE);
-            mButtonBacklightTimeout.setValue(String.valueOf(currentTimeout));
-            mButtonBacklightTimeout.setOnPreferenceChangeListener(this);
-            disableUnusableTimeouts(mButtonBacklightTimeout);
-            updateTimeoutPreferenceDescription(currentTimeout);
-        } else {
-            additionalOptionsCategory.removePreference(mButtonBacklightTimeout);
-        }
-
         mEnableCustomBindings.setChecked((Settings.System.getInt(getActivity().
                 getApplicationContext().getContentResolver(),
                 Settings.System.HARDWARE_KEY_REBINDING, 0) == 1));
         mShowActionOverflow.setChecked((Settings.System.getInt(getActivity().
                 getApplicationContext().getContentResolver(),
                 Settings.System.UI_FORCE_OVERFLOW_BUTTON, 0) == 1));
-    }
-
-    private void updateTimeoutPreferenceDescription(long currentTimeout) {
-        ListPreference preference = mButtonBacklightTimeout;
-        String summary;
-        if (currentTimeout < 0) {
-            // Unsupported value
-            summary = "";
-        } else {
-            final CharSequence[] entries = preference.getEntries();
-            final CharSequence[] values = preference.getEntryValues();
-            int best = 0;
-            for (int i = 0; i < values.length; i++) {
-                long timeout = Long.parseLong(values[i].toString());
-                if (currentTimeout >= timeout) {
-                    best = i;
-                }
-            }
-            summary = preference.getContext().getString(R.string.button_backlight_timeout_summary,
-                    entries[best]);
-        }
-        preference.setSummary(summary);
-    }
-
-    private void disableUnusableTimeouts(ListPreference backlightTimeoutPreference) {
-        long maxTimeout = Settings.System.getLong(getContentResolver(),
-                Settings.System.SCREEN_OFF_TIMEOUT, 30000);
-        final CharSequence[] entries = backlightTimeoutPreference.getEntries();
-        final CharSequence[] values = backlightTimeoutPreference.getEntryValues();
-        ArrayList<CharSequence> revisedEntries = new ArrayList<CharSequence>();
-        ArrayList<CharSequence> revisedValues = new ArrayList<CharSequence>();
-        for (int i = 0; i < values.length; i++) {
-            long timeout = Long.parseLong(values[i].toString());
-            if (timeout <= maxTimeout) {
-                revisedEntries.add(entries[i]);
-                revisedValues.add(values[i]);
-            }
-        }
-        if (revisedEntries.size() != entries.length || revisedValues.size() != values.length) {
-            backlightTimeoutPreference.setEntries(
-                    revisedEntries.toArray(new CharSequence[revisedEntries.size()]));
-            backlightTimeoutPreference.setEntryValues(
-                    revisedValues.toArray(new CharSequence[revisedValues.size()]));
-            final int userPreference = Integer.parseInt(backlightTimeoutPreference.getValue());
-            if (userPreference <= maxTimeout) {
-                backlightTimeoutPreference.setValue(String.valueOf(userPreference));
-            } else {
-                // There will be no highlighted selection since nothing in the list matches
-                // maxTimeout. The user can still select anything less than maxTimeout.
-                // TODO: maybe append maxTimeout to the list and mark selected.
-            }
-        }
-        backlightTimeoutPreference.setEnabled(revisedEntries.size() > 0);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -318,12 +242,6 @@ public class HardwareKeys extends SettingsPreferenceFragment implements OnPrefer
                     mAppSwitchLongPressAction.getEntries()[index]);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION, value);
-            return true;
-        } else if (preference == mButtonBacklightTimeout) {
-            int value = Integer.parseInt((String) newValue);
-            Settings.System.putLong(getContentResolver(),
-                    Settings.System.BUTTON_BACKLIGHT_TIMEOUT, value);
-            updateTimeoutPreferenceDescription(value);
             return true;
         }
         return false;

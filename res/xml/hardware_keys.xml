@@ -94,7 +94,6 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="additional_options"
         android:title="@string/additional_options_title">
 
        <CheckBoxPreference
@@ -103,15 +102,6 @@
             android:summary="@string/hardware_keys_show_overflow_summary"
             android:persistent="false"
             android:defaultValue="false" />
-
-        <ListPreference
-            android:key="button_backlight_timeout"
-            android:dialogTitle="@string/button_backlight_timeout_title"
-            android:title="@string/button_backlight_timeout_title"
-            android:summary="@string/button_backlight_timeout_summary"
-            android:persistent="false"
-            android:entries="@array/button_backlight_timeout_entries"
-            android:entryValues="@array/button_backlight_timeout_values" />
 
     </PreferenceCategory>
 
