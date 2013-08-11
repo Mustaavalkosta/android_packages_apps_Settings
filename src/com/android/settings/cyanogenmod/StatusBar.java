@@ -153,9 +153,8 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             Settings.System.putInt(resolver, Settings.System.STATUS_BAR_CLOCK, value ? 1 : 0);
             return true;
         } else if (preference == mStatusBarCenterClock) {
-            value = mStatusBarCenterClock.isChecked();
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.STATUS_BAR_CENTER_CLOCK, value ? 1 : 0);
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(resolver, Settings.System.STATUS_BAR_CENTER_CLOCK, value ? 1 : 0);
             return true;
         } else if (preference == mStatusBarBrightnessControl) {
             boolean value = (Boolean) newValue;
